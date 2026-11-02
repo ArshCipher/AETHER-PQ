@@ -1,0 +1,13 @@
+# AETHER-PQ Certificate Authority (CA) Configuration Template
+node_type: "ca"
+bind_ip: "0.0.0.0"
+port: 28000
+
+# Security & Key Storage
+certs_dir: "/etc/aether/certs/ca"
+sig_suite: "ML-DSA-65"
+
+# Operational Logging
+log_level: "INFO"
+log_format: "json"
+log_file: "/var/log/aether/ca.log"

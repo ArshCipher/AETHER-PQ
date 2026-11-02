@@ -1,0 +1,13 @@
+{
+  "_comment": "AETHER-PQ Production Ethernet Deployment Network Profile",
+  "ca_ip": "192.168.10.1",
+  "ca_port": 28000,
+  "gcs_ip": "192.168.10.1",
+  "gcs_port": 28001,
+  "local_ip": "192.168.10.1",
+  "local_port": 28001,
+  "log_level": "info",
+  "op_mode": "hybrid",
+  "interface_name": "eth0",
+  "uav_routes_str": "1:192.168.10.101:28002,2:192.168.10.102:28002,3:192.168.10.103:28002,4:192.168.10.104:28002"
+}

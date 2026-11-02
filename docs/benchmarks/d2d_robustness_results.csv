@@ -1,0 +1,7 @@
+Scenario,RecoveryTimeMs,PacketsDropped,SessionSuccessRate,CleanupCorrectness,KeyZeroizationVerified,RecoverySuccess,FailureReason
+"Network Congestion",12.8006,0,100,true,true,true,""
+"Packet Loss",0.7275,32,68.3168,true,true,true,""
+"Coordinator Offline",0.019834,1,100,true,true,true,""
+"High Burst Traffic",3.55696,0,100,true,true,true,""
+"Session Recreation",0.030833,0,100,true,true,true,""
+"Cascading UAV Failures",0.034667,25,100,true,true,true,""

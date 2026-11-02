@@ -1,0 +1,25 @@
+# AETHER-PQ UAV Node Configuration Template
+node_type: "uav"
+node_id: 1
+
+# Network & Mesh Settings
+mesh_interface: "bat0"
+mesh_ip: "192.168.171.1"
+node_port: 28003
+
+# Service Endpoints
+ca_endpoint: "192.168.1.100:28000"
+gcs_endpoint: "192.168.1.100:28001"
+
+# Security & Storage
+certs_dir: "/etc/aether/certs/uav"
+
+# Telemetry & Heartbeat
+telemetry:
+  enabled: true
+  interval_ms: 1000
+
+# Operational Logging
+log_level: "INFO"
+log_format: "json"
+log_file: "/var/log/aether/uav.log"

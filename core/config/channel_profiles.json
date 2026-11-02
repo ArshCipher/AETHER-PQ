@@ -1,0 +1,99 @@
+{
+    "profiles": [
+        {
+            "name": "ideal_lan",
+            "description": "Zero-impairment 1 Gbps LAN — baseline for correctness tests",
+            "params": {
+                "propagation_delay_ms": 0.1,
+                "jitter_stddev_ms":     0.0,
+                "bandwidth_bps":        1000000000.0,
+                "queue_max_packets":    256,
+                "loss_good":            0.0,
+                "loss_bad":             0.0,
+                "p_gb":                 0.0,
+                "p_bg":                 1.0,
+                "duplicate_prob":       0.0,
+                "duplicate_delay_ms":   0.0,
+                "reorder_prob":         0.0,
+                "reorder_delay_ms":     0.0,
+                "enable_trace":         false
+            }
+        },
+        {
+            "name": "wifi",
+            "description": "IEEE 802.11n indoor WiFi — 54 Mbps, ~1% loss, 3 ms jitter, light burst",
+            "params": {
+                "propagation_delay_ms": 2.0,
+                "jitter_stddev_ms":     3.0,
+                "bandwidth_bps":        54000000.0,
+                "queue_max_packets":    64,
+                "loss_good":            0.005,
+                "loss_bad":             0.40,
+                "p_gb":                 0.01,
+                "p_bg":                 0.15,
+                "duplicate_prob":       0.002,
+                "duplicate_delay_ms":   1.5,
+                "reorder_prob":         0.005,
+                "reorder_delay_ms":     4.0,
+                "enable_trace":         false
+            }
+        },
+        {
+            "name": "5g",
+            "description": "5G NR sub-6 GHz — 100 Mbps, 0.1% loss, 1 ms jitter, very low burst",
+            "params": {
+                "propagation_delay_ms": 5.0,
+                "jitter_stddev_ms":     1.0,
+                "bandwidth_bps":        100000000.0,
+                "queue_max_packets":    128,
+                "loss_good":            0.001,
+                "loss_bad":             0.20,
+                "p_gb":                 0.002,
+                "p_bg":                 0.20,
+                "duplicate_prob":       0.0005,
+                "duplicate_delay_ms":   1.0,
+                "reorder_prob":         0.002,
+                "reorder_delay_ms":     2.0,
+                "enable_trace":         false
+            }
+        },
+        {
+            "name": "satellite",
+            "description": "GEO satellite link — 600 ms one-way, 10 Mbps, 0.5% loss, 50 ms jitter",
+            "params": {
+                "propagation_delay_ms": 600.0,
+                "jitter_stddev_ms":     50.0,
+                "bandwidth_bps":        10000000.0,
+                "queue_max_packets":    32,
+                "loss_good":            0.003,
+                "loss_bad":             0.60,
+                "p_gb":                 0.005,
+                "p_bg":                 0.08,
+                "duplicate_prob":       0.001,
+                "duplicate_delay_ms":   5.0,
+                "reorder_prob":         0.01,
+                "reorder_delay_ms":     50.0,
+                "enable_trace":         false
+            }
+        },
+        {
+            "name": "custom",
+            "description": "User-defined profile — edit values freely",
+            "params": {
+                "propagation_delay_ms": 15.0,
+                "jitter_stddev_ms":     2.0,
+                "bandwidth_bps":        54000000.0,
+                "queue_max_packets":    64,
+                "loss_good":            0.02,
+                "loss_bad":             0.50,
+                "p_gb":                 0.01,
+                "p_bg":                 0.10,
+                "duplicate_prob":       0.001,
+                "duplicate_delay_ms":   1.0,
+                "reorder_prob":         0.005,
+                "reorder_delay_ms":     5.0,
+                "enable_trace":         false
+            }
+        }
+    ]
+}

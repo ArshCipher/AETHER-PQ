@@ -1,0 +1,12 @@
+{
+  "node_id": 1,
+  "local_ip": "192.168.1.103",
+  "local_port": 28002,
+  "gcs_ip": "192.168.1.102",
+  "gcs_port": 28001,
+  "ca_ip": "192.168.1.101",
+  "ca_port": 28000,
+  "op_mode": "hybrid",
+  "log_level": "info",
+  "interface_name": "eth0"
+}

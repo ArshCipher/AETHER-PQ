@@ -1,0 +1,21 @@
+[Unit]
+Description=AETHER-PQ UAV Companion Node Daemon
+After=network.target aether-mesh.service
+Wants=network.target aether-mesh.service
+
+[Service]
+Type=simple
+User=aether
+Group=aether
+ExecStart=/usr/local/bin/uav_pqc_uav_node --config /etc/aether/uav.yaml
+Restart=always
+RestartSec=3s
+WatchdogSec=10s
+StandardOutput=journal
+StandardError=journal
+ProtectSystem=full
+ProtectHome=read-only
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

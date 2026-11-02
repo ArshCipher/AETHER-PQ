@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "paths": {
+    "home": "${AETHER_HOME}",
+    "config": "${AETHER_CONFIG_DIR}",
+    "data": "${AETHER_DATA_DIR}",
+    "pki": "${AETHER_PKI_DIR}",
+    "logs": "${AETHER_LOG_DIR}",
+    "runtime": "${AETHER_RUNTIME_DIR}",
+    "results": "${AETHER_RESULTS_DIR}",
+    "downloads": "${AETHER_DOWNLOAD_DIR}",
+    "uav_query_root": "${AETHER_UAV_QUERY_ROOT}"
+  }
+}

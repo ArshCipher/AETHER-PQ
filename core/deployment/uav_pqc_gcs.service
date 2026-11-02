@@ -1,0 +1,14 @@
+[Unit]
+Description=UAV-PQC Ground Control Station Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/uav_pqc_gcs_node --config /etc/uav_pqc/gcs_config.json
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

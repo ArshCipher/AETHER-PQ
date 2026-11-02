@@ -1,0 +1,12 @@
+{
+  "_comment": "AETHER-PQ Local Development Network Profile",
+  "ca_ip": "127.0.0.1",
+  "ca_port": 28000,
+  "gcs_ip": "127.0.0.1",
+  "gcs_port": 28001,
+  "local_ip": "127.0.0.1",
+  "local_port": 28001,
+  "log_level": "info",
+  "op_mode": "hybrid",
+  "interface_name": "lo"
+}

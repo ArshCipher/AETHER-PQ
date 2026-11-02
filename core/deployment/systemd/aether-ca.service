@@ -1,0 +1,21 @@
+[Unit]
+Description=AETHER-PQ Certificate Authority Daemon
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=aether
+Group=aether
+ExecStart=/usr/local/bin/uav_pqc_ca_node --config /etc/aether/ca.yaml
+Restart=always
+RestartSec=3s
+WatchdogSec=10s
+StandardOutput=journal
+StandardError=journal
+ProtectSystem=full
+ProtectHome=read-only
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

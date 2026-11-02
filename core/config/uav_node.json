@@ -1,0 +1,20 @@
+{
+  "_comment": "UAV-PQC Application Configuration — UAV Node",
+  "node_id": "0200000000000000000000000000000000000000000000000000000000000000",
+  "offered_modes": ["hybrid", "transition", "pqc-only"],
+  "initial_profile": "standard",
+  "rekey_interval_seconds": 600,
+  "ca_cert_path": "/etc/uav_pqc/ca.der",
+  "our_cert_path": "/etc/uav_pqc/uav01.der",
+  "our_private_key_path": "/etc/uav_pqc/uav01.key",
+  "gcs_address": "192.168.1.1",
+  "gcs_port": 8443,
+  "local_port": 8444,
+  "battery_threshold_lightweight": 20.0,
+  "battery_threshold_standard": 50.0,
+  "acpe_rules_path": "/etc/uav_pqc/acpe_rules.json",
+  "initial_mission_criticality": 5.0,
+  "initial_network_congestion": 0.0,
+  "initial_swarm_density": 0.0,
+  "initial_cpu_utilization": 0.0
+}

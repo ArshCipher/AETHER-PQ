@@ -1,0 +1,14 @@
+[Unit]
+Description=UAV-PQC Certificate Authority Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/uav_pqc_ca_node --config /etc/uav_pqc/ca_config.json
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

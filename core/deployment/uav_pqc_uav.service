@@ -1,0 +1,14 @@
+[Unit]
+Description=UAV-PQC UAV Node Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/uav_pqc_uav_node --config /etc/uav_pqc/uav_config.json
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

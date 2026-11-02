@@ -1,0 +1,27 @@
+{
+  "topology_name": "Heterogeneous UAV Ethernet Swarm",
+  "ca_node": {
+    "hostname": "ca-server",
+    "ip": "192.168.1.101",
+    "port": 28000
+  },
+  "gcs_node": {
+    "hostname": "gcs-station",
+    "ip": "192.168.1.102",
+    "port": 28001
+  },
+  "uavs": [
+    {
+      "id": 1,
+      "hostname": "uav-1",
+      "ip": "192.168.1.103",
+      "port": 28002
+    },
+    {
+      "id": 2,
+      "hostname": "uav-2",
+      "ip": "192.168.1.104",
+      "port": 28003
+    }
+  ]
+}

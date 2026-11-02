@@ -1,0 +1,10 @@
+prefix=@UAV_PQC_PC_PREFIX@
+includedir=@UAV_PQC_PC_INCDIR@
+libdir=@UAV_PQC_PC_LIBDIR@
+
+Name: uav_pqc
+Description: Post-Quantum Communication Architecture for Heterogeneous UAV Networks
+Version: @UAV_PQC_PC_VERSION@
+Cflags: -I${includedir}
+Libs: -L${libdir} -luav_pqc_core
+Requires: libssl >= 3.0, liboqs

@@ -1,0 +1,24 @@
+# AETHER-PQ Ground Control Station (GCS) Configuration Template
+node_type: "gcs"
+bind_ip: "0.0.0.0"
+port: 29001
+
+# Endpoints
+ca_endpoint: "127.0.0.1:28000"
+ui_gateway_port: 3001
+
+# Security & Key Storage
+certs_dir: "/etc/aether/certs/gcs"
+kem_suite: "ML-KEM-768"
+sig_suite: "ML-DSA-65"
+
+# Group Key Management (TreeKEM)
+treekem:
+  enabled: true
+  auto_rekey_interval_s: 300
+  heartbeat_timeout_s: 15
+
+# Operational Logging
+log_level: "INFO"
+log_format: "json"
+log_file: "/var/log/aether/gcs.log"

@@ -1,0 +1,21 @@
+[Unit]
+Description=AETHER-PQ Ground Control Station Daemon
+After=network.target aether-ca.service
+Wants=network.target
+
+[Service]
+Type=simple
+User=aether
+Group=aether
+ExecStart=/usr/local/bin/uav_pqc_gcs_node --config /etc/aether/gcs.yaml
+Restart=always
+RestartSec=3s
+WatchdogSec=10s
+StandardOutput=journal
+StandardError=journal
+ProtectSystem=full
+ProtectHome=read-only
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

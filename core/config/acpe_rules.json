@@ -1,0 +1,77 @@
+{
+  "_comment": "UAV-PQC Adaptive Cryptographic Policy Engine — Rule Configuration",
+  "_schema_version": "1.0",
+
+  "rules": [
+    {
+      "_comment": "Rule 1: CPU overloaded — reduce crypto to minimum viable",
+      "conditions": [
+        { "field": "cpu_utilization", "op": "gt", "value": 85.0 }
+      ],
+      "actions": {
+        "profile": "Lightweight",
+        "mode": "Transition",
+        "rekey_interval_seconds": 60,
+        "session_lifetime_seconds": 120
+      }
+    },
+    {
+      "_comment": "Rule 2: Critical battery — shed all non-essential crypto overhead",
+      "conditions": [
+        { "field": "battery_percent", "op": "lt", "value": 20.0 }
+      ],
+      "actions": {
+        "profile": "Lightweight",
+        "mode": "Transition",
+        "rekey_interval_seconds": 120,
+        "session_lifetime_seconds": 240
+      }
+    },
+    {
+      "_comment": "Rule 3: ISR / high-value mission — mandatory Hardened PQC-Only",
+      "conditions": [
+        { "field": "mission_criticality", "op": "gte", "value": 8.0 }
+      ],
+      "actions": {
+        "profile": "Hardened",
+        "mode": "PqcOnly",
+        "rekey_interval_seconds": 300,
+        "session_lifetime_seconds": 600
+      }
+    },
+    {
+      "_comment": "Rule 4: Congested link OR dense swarm — either alone triggers Lightweight to keep overhead manageable",
+      "any_or_all": "any",
+      "conditions": [
+        { "field": "network_congestion", "op": "gt", "value": 0.75 },
+        { "field": "swarm_density",      "op": "gt", "value": 20.0 }
+      ],
+      "actions": {
+        "profile": "Lightweight",
+        "mode": "Hybrid",
+        "rekey_interval_seconds": 180,
+        "session_lifetime_seconds": 360
+      }
+    },
+    {
+      "_comment": "Rule 5: Highly mobile UAV (fast flight) — reduce rekey frequency to limit protocol message load",
+      "conditions": [
+        { "field": "mobility", "op": "gt", "value": 25.0 }
+      ],
+      "actions": {
+        "profile": "Standard",
+        "mode": "Hybrid",
+        "rekey_interval_seconds": 600,
+        "session_lifetime_seconds": 1200
+      }
+    }
+  ],
+
+  "default": {
+    "_comment": "Fallback when no rule matches: Standard Hybrid mode with 10-minute session lifetime",
+    "profile": "Standard",
+    "mode": "Hybrid",
+    "rekey_interval_seconds": 600,
+    "session_lifetime_seconds": 1200
+  }
+}
